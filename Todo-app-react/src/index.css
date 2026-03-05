@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+   
+    background-color: #aaa;
+}
+
+.main{
+    width: 100%;
+    height: 100vh;
+    /* aspect-ratio: 2/1; */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.inputsection {
+    display: flex;
+    gap: 20px;
+}
+.todoinput {
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+.btn {
+    border: none;
+    padding: 7px 20px;
+    border-radius: 15px;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.btn:active{
+  transform: scale(0.95);
+}
+
+.filterbtns {
+    display: flex;
+    gap: 25px;
+}
+
+.filterbtn{
+    background: linear-gradient(135deg, orange,blue);
+
+}
+.addbtn {
+  background:linear-gradient(to top right, blue , black);
+}
+
+.itemlist {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
