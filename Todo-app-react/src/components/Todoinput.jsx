@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
-import TodoInput from "./components/Todoinput"
+import TodoInput from "./components/TodoInput"
 import FilterButtons from "./components/FilterButtons"
-import TodoList from "./components/Todolist"
+import TodoList from "./components/TodoList"
 import Footer from "./components/Footer"
 
 function App() {
