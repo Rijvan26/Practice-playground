@@ -1,7 +1,7 @@
 function Footer({activeCount}) {
 
   return (
-    <p>{activeCount} items left</p>
+    <p className="totalcount">{activeCount} items left</p>
   )
 
 }

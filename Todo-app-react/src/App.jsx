@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react"
-import TodoInput from "./components/Todoinput"
-import FilterButtons from "./components/FilterButtons"
-import TodoList from "./components/Todolist"
+import TodoInput from "./components/TodoInput"
+import FilterButtons from "./components/FilterButton"
+import TodoList from "./components/TodoList"
 import Footer from "./components/Footer"
 
 function App() {
 
-  const [todos,setTodos] = useState([])
+  const [todos,setTodos] = useState(() => {
+    const saved = localStorage.getItem("todos")
+    return saved? JSON.parse(saved): []
+  })
   const [input,setInput] = useState("")
   const [filter,setFilter] = useState("all")
 
@@ -45,12 +48,17 @@ function App() {
     return true
   })
 
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos))
+  },[todos])
+
   const activeCount = todos.filter(t=>!t.completed).length
 
   return (
     <div className="main">
-
-      <TodoInput
+      <div className="mainsection">
+        <h1>Todo App</h1>
+      <TodoInput 
         input={input}
         setInput={setInput}
         addTodo={addTodo}
@@ -70,6 +78,7 @@ function App() {
         activeCount={activeCount}
       />
 
+      </div>
     </div>
   )
 }
