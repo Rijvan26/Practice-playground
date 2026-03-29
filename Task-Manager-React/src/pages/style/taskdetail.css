@@ -1,0 +1,5 @@
+.taskdetail{
+    margin-top: 30px;
+    min-height: (100vh-100px);
+    color: var(--text-main);
+}

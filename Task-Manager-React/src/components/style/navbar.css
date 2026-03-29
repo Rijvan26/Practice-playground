@@ -1,0 +1,77 @@
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(10px); /* For that glass look */
+}
+
+.nav {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+.logo {
+  font-size: var(--font-xl);
+  color: var(--text-main);
+  font-weight: 700;
+}
+
+.navlinks {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.navlink {
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: var(--font-sm);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navlink:hover {
+  color: var(--primary);
+}
+
+.menuicon {
+  display: none; /* Hidden on Desktop */
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+/* --- Responsive Logic (Mobile) --- */
+@media (max-width: 768px) {
+  .menuicon {
+    display: block; /* Show icon on mobile */
+  }
+
+  .navlinks {
+    position: absolute;
+    top: 60px; /* Right below the header */
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-card);
+    flex-direction: column;
+    align-items: center;
+    padding: var(--space-lg) 0;
+    gap: var(--space-md);
+    border-bottom: 1px solid var(--border-color);
+    
+    /* Animation: Hidden by default */
+    transform: translateY(-150%);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .navlinks.active {
+    transform: translateY(0); /* Slides down when active */
+  }
+}

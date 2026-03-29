@@ -4,6 +4,7 @@ import TaskForm from '../components/TaskForm'
 import TaskList from '../components/TaskList'
 import FilterBtns from '../components/FilterBtns'
 import useUsers from '../hooks/useUsers'
+import "./style/taskpage.css"
 
 const TaskPage = () => {
     const {tasks, addTask, deleteTask, toggleTask} = useTasks()

@@ -3,6 +3,7 @@ import TaskPage from './pages/TaskPage'
 import UsersPage from './pages/UsersPage'
 import Navbar from './components/Navbar'
 import TaskDetail from './pages/TaskDetail'
+import Aboutus from './pages/Aboutus'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Route path="/" element={<TaskPage />} />
         <Route path="/users" element={<UsersPage />} />
         <Route path="/task/:id" element={<TaskDetail />} />
+        <Route path='/about' element={<Aboutus />}/>
 
 
       </Routes>

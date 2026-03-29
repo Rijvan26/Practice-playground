@@ -2,12 +2,15 @@ import React from 'react'
 import { useParams } from 'react-router-dom'
 import useTasks from '../hooks/useTasks'
 import useUser from "../hooks/useUsers"
+import "./style/taskdetail.css"
 
 const TaskDetail = () => {
   const { id } = useParams(); // Ensure this matches your App.js (:taskid)
   const { tasks, isLoading: tasksLoading } = useTasks();
   const { users, isLoading: usersLoading } = useUser("https://jsonplaceholder.typicode.com/users");
 
+
+  console.log(users)
   // 1. Wait for both to finish loading
   if (tasksLoading || usersLoading) return <div>Loading details...</div>;
 
@@ -21,19 +24,23 @@ const TaskDetail = () => {
   const user = users.find(u => String(u.id) === String(task.userId));
 
   return (
-    <div >
+    <div className='taskdetail' >
       <h1>Task Detail</h1>
       <hr />
       
-      <h3>{task.text}</h3>
+      <h3>Task: {task.text}</h3>
       <p>Status: {task.completed ? "✅ Completed" : "⏳ Pending"}</p>
 
-      <div >
+      <div className='taskuserdetail'>
         <h4>Assigned To:</h4>
         {user ? (
           <>
             <p><strong>Name:</strong> {user.name}</p>
             <p><strong>Email:</strong> {user.email}</p>
+            <p><strong>website:</strong> {user.website}</p>
+            <p><strong>Company:</strong> {user.company.name}  {user.company.bs} </p>
+            <p><strong>Address:</strong> <strong>City:</strong> {user.address.city}, {user.address.street}, <strong>Zipcode:</strong> {user.address.zipcode}</p>
+  
           </>
         ) : (
           <p>User details unavailable (ID: {task.userId})</p>

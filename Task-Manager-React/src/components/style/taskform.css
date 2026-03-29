@@ -1,0 +1,48 @@
+.taskform{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    
+}
+
+.taskinput{
+    width: 70% ;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    border: 1px solid rgb(145, 142, 142);
+    outline: none;
+}
+
+.userselect {
+    width: 20% ;
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    border: 1px solid rgb(145, 142, 142);
+    outline: none;
+}
+
+.addtaskbtn {
+    width: 10% ;
+    background: var(--primary);
+    color: whitesmoke;
+}
+
+.addtaskbtn:hover{
+    background: var(--primary-hover);
+}
+
+@media (max-width:694px) {
+    .taskform {
+        display: grid;
+        grid-template-columns: 9fr 2fr 1fr ;
+    }
+
+
+    .taskinput,.userselect,.addtaskbtn{
+        width: 100%;
+    }
+
+    .addtaskbtn{
+        padding: var(--space-xs) var(--space-sm);
+    }
+}

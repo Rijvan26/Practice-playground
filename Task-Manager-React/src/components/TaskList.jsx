@@ -1,12 +1,12 @@
 import React from 'react'
+import "./style/tasklist.css"
 import TaskItem from '../components/TaskItem'
 const TaskList = ({users, onToggle, onDelete, tasks}) => {
         console.log("hello" ,users.name)
 
   return (
     <div className='tasklist'>
-        <h2>My Tasks</h2>
-        {tasks.length === 0 && <p>Task list is empty</p>}
+        {tasks.length === 0 && <p className='emptypara'>Task list is empty</p>}
         <ul>
             {
               tasks.map(task => {

@@ -1,0 +1,19 @@
+.tasklist{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  /* justify-content: center; */
+  /* align-items: center; */
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.emptypara{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+::-webkit-scrollbar{
+    width:15px;
+}

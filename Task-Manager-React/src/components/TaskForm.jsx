@@ -1,4 +1,6 @@
 import React,{useState} from 'react'
+import "./style/taskform.css"
+
 const TaskForm = ( { addTask , users, loading,errors}) => {
     const [input, setinput] = useState("")
       const [selectedUser, setSelectedUser] = useState("unknown user")
@@ -24,6 +26,7 @@ if (errors) {
   return (
     <div className='taskform'>
         <input type="text"
+        className='taskinput'
       placeholder='enter task'
       value={input}
       onChange={(e) => setinput(e.target.value)}
@@ -34,6 +37,7 @@ if (errors) {
       }} />
 
       <select 
+      className='userselect'
       disabled={loading}
       value={selectedUser}
       onChange={(e) => setSelectedUser(Number(e.target.value))}>
@@ -51,7 +55,7 @@ if (errors) {
         }
       </select>
 
-      <button className='btns' onClick={handleAdd}>Add</button>
+      <button className='addtaskbtn btns' onClick={handleAdd}>Add</button>
     </div>
   )
 }
