@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html,body {
+        height: 100%;
+        width: 100%;
+        background-color: black;
+    }
+
+    header {
+        background: linear-gradient(135deg, teal  , rgba(255, 255, 255, 0.767));
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 10px ;
+        justify-content: center;
+        flex-direction: column;
+        font-family: cursive;
+    }
+
+    header h1 {
+        font-size: 40px;
+    }
+
+    header h4 {
+        font-size: 25px;
+    }
+
+    main {
+        height: 100dvh;
+        background-color: rgba(0, 0, 0, 0.514);
+    }
+    main img {
+        
+    }
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+
+<body>
+    <header>
+        <h1>Catch The Bug </h1>
+        <h4>Tap on screen to Catch</h4>
+    </header>
+
+    <main>
+        <img src="bugimg.png" alt="">
+    </main>
+
+
+    <script>
+        const main = document.querySelector('main')
+              const randomX = Math.floor(Math.random()*500 ) 
+             const randomY = Math.floor(Math.random()*500 ) 
+
+        main.addEventListener("click", function (dets) {
+            
+            const randomX = Math.floor(Math.random()*800 ) 
+             const randomY = Math.floor(Math.random()*300 ) 
+              console.log(randomX,randomY);
+                       
+              
+               gsap.to("main img", {
+            x:randomX,
+            y:randomY,
+            duration:2,
+            opacity:0.3,
+        })
+        })
+
+       
+    </script>
+</body>
+</html>

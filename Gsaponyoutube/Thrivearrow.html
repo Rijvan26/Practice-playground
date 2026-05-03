@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+
+    <style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    html,body {
+        height: 100%;
+        width: 100%;
+        background: #000;
+    }
+
+    #page1, #page2, #page3 { 
+        height: 100dvh;
+        width: 100%;
+       
+    }
+
+    #move {
+        background: #D8FF04;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+        gap: 15px;
+        overflow: hidden;
+    }
+
+    .moveiq {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        overflow: hidden;
+    }
+    .moveiq img {
+       height:60px ;
+
+    }
+    </style>
+</head>
+<body>
+    <div id="page1"></div>
+    <div id="page2">
+        <div id="move">
+            <div class="moveiq">
+                <h1>TRIVE BEYOND LIMITS</h1>
+                <img src="right-arrow.png" alt="">
+            </div>
+             <div class="moveiq">
+                <h1>TRIVE BEYOND LIMITS</h1>
+                <img src="right-arrow.png" alt="">
+            </div>
+            <div class="moveiq">
+                <h1>TRIVE BEYOND LIMITS</h1>
+                <img src="right-arrow.png" alt="">
+            </div>
+            <div class="moveiq">
+                <h1>TRIVE BEYOND LIMITS</h1>
+                <img src="right-arrow.png" alt="">
+            </div>
+            <div class="moveiq">
+                <h1>TRIVE BEYOND LIMITS</h1>
+                <img src="right-arrow.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="page3"></div>
+
+    <script>
+   window.addEventListener('wheel', function (dets) {
+         if (dets.deltaY > 0) {
+           gsap.to('.moveiq', {
+            transform:"translateX(-200%)",
+            duration:4,
+            repeat:-1,
+            ease:'none'
+
+           })         
+           
+           gsap.to('.moveiq img', {
+            rotate:180
+           })
+         } else {
+            gsap.to('.moveiq', {
+            transform:"translateX(0%)",
+            duration:4,
+            repeat:-1,
+            ease:'none'
+
+           })         
+           
+           gsap.to('.moveiq img', {
+            rotate:0
+           })
+            
+         }
+   })
+
+
+    </script>
+</body>
+</html>
